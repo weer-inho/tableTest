@@ -45,7 +45,7 @@ export const generateRow = () => {
   return {
     number: getRandomIntegerFloat(1, 200),
     date: dayjs(dateVariable).format('DD.MM.YYYY'),
-    priority: getRandomArrayElement(priorityArray),
+    priority: getRandomIntegerFloat(1, 2),
     сustomersNumber: getRandomArrayElement(сustomersNumberArray),
     condition: getRandomArrayElement(conditionArray),
     designation: getRandomArrayElement(designationArray),
@@ -96,6 +96,18 @@ export const sortRows = (evt, array) => {
           return -1;
         }
         if (a.date > b.date) {
+          return 1;
+        }
+        return 0;
+      })
+    }
+
+    case 'products__priority': {
+      return [...array].sort((a, b) => {
+        if (a.priority < b.priority) {
+          return -1;
+        }
+        if (a.priority > b.priority) {
           return 1;
         }
         return 0;

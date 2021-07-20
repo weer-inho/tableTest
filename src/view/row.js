@@ -2,6 +2,25 @@
 
 export const createEmptyRow = (row) => {
   const {number, date, priority, сustomersNumber, designation} = row;
+  const priorityTag = (priority) => {
+    switch(priority) {
+      case 1: {
+        return 'Низкий';
+      }
+
+      case 2: {
+        return 'Средний';
+      }
+
+      case 3: {
+        return 'Высокий';
+      }
+
+      default: {
+        return;
+      }
+    }
+  };
 
   return `<div class="product-item-container" >
         <tr class="product__item">
@@ -11,7 +30,7 @@ export const createEmptyRow = (row) => {
           <td class="product__info">
             <a href="#">${date}</a>
           </td>
-          <td class="product__info">${priority}</td>
+          <td class="product__info">${priorityTag(priority)}</td>
           <td class="product__info">
             ${сustomersNumber}
           </td>

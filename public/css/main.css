@@ -3436,6 +3436,14 @@ textarea {
   background-image: linear-gradient(to top, #c6c6c6 0%, #ffffff 100%);
 }
 
+.products__head th:hover {
+  background-image: linear-gradient(to top, #c6c6c6 35%, #ffffff 100%);
+}
+
+.products__head th:active {
+  background-image: linear-gradient(to top, #c6c6c6 70%, #ffffff 100%);
+}
+
 .products__name {
   vertical-align: middle;
   padding: 13px 25px;
