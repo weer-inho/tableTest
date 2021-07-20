@@ -1,13 +1,15 @@
+// import AbstractView from 'abstract.js';
+
 export const createEmptyTable = () => {
   return `<table class="products__block">
-        <tbody>
+        <tbody class="products__tbody">
            <tr class="products__head">
               <th class="products__number">№</th>
               <th class="products__data">Дата</th>
               <th class="products__priority">Приоритет</th>
               <th class="products__customer-number">№ Заказчика</th>
               <th class="products__condition">Состояние</th>
-              <th class="products__name">actions</th>
+              <th class="products__name">Действия</th>
            </tr>
         </tbody>
 
@@ -21,4 +23,14 @@ export const createEmptyTable = () => {
           </colgroup>
     </table>`;
 };
+
+// export default class Table extends AbstractView {
+//   constructor() {
+//     super();
+//   }
+
+//   getTemplate() {
+//     return createEmptyTable();
+//   }
+// }
 

@@ -1,6 +1,7 @@
 import dayjs from 'dayjs';
-import {createEmptyTable} from '../view/table.js';
+import {Table} from '../view/table.js';
 import {createEmptyRow} from '../view/row.js';
+import {createEmptyTable} from '../view/table.js';
 import {
   priorityArray,
   сustomersNumberArray,
@@ -68,11 +69,42 @@ export const generateRow = () => {
 export const drawTable = (data, container) => {
   container.innerText = '';
   render(container, createEmptyTable());
-  const table = document.querySelector('.products__block');
+  const table = document.querySelector('.products__tbody');
 
   for (let i = 0; i < data.length; i++) {
     render(table, createEmptyRow(data[i]));
   }
 }
 
+export const sortRows = (evt, array) => {
+  switch(evt.target.className) {
+    case 'products__number': {
+      return [...array].sort((a, b) => {
+        if (a.number < b.number) {
+          return -1;
+        }
+        if (a.number > b.number) {
+          return 1;
+        }
+        return 0;
+      })
+    }
+
+    case 'products__data': {
+      return [...array].sort((a, b) => {
+        if (a.date < b.date) {
+          return -1;
+        }
+        if (a.date > b.date) {
+          return 1;
+        }
+        return 0;
+      })
+    }
+
+    default: {
+      return;
+    }
+  }
+};
 

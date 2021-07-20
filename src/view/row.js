@@ -1,3 +1,5 @@
+// import AbstractView from 'abstract.js';
+
 export const createEmptyRow = (row) => {
   const {number, date, priority, сustomersNumber, designation} = row;
 
@@ -20,3 +22,14 @@ export const createEmptyRow = (row) => {
         </tr>
       </div>`;
 };
+
+// export default class Row extends AbstractView {
+//   constructor(row) {
+//     super();
+//     this._row = row;
+//   }
+
+//   getTemplate() {
+//     return createEmptyRow(row);
+//   }
+// }
